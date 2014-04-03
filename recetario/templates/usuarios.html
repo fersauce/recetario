@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% comment %} Aqui van los comentarios {% endcomment %}
+{% block titulo %} Usuarios Registrados {% endblock %}
+{% block encabezado %}
+	<h1>Colaboradores</h1>
+{% endblock%}
+{% block contenido %}
+	<ul>
+		{% for dato in usuarios %}
+			<li>{{dato.username|capfirst}} - <em>{{dato.email}}</em>
+				<ul>
+					{%for item in recetas %}
+						{% if item.usuario == dato %}
+							<li>{{item}}</li>
+						{% endif %}
+					{% empty %}
+						<li>Este usuario a&uacute;n no ha registrado recetas.
+					{% endfor %}
+				</ul>
+			</li>
+		{% empty %}
+			<li>No hay usuarios registrados, a&uacute;n</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

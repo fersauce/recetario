@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3728656010">
+    <data-source source="LOCAL" name="Django default" uuid="b79a4505-aa05-4611-9ebb-b24e22729426">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/recetario</jdbc-url>
+      <user-name>sigmasystem</user-name>
+      <user-password>dff9dff9dff5dfc3dfd9df98df84</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

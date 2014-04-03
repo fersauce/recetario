@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% comment %} Aqui van los comentarios {% endcomment %}
+{% block titulo %} Usuarios Registrados {% endblock %}
+{% block style_css %}
+	<style>
+		img { width:100px;}
+	</style>
+{% endblock %}
+{% block encabezado %}
+	<h1>Nuestras recetas</h1>
+{% endblock%}
+{% block contenido %}
+	<ul>
+		{%for dato in datos %}
+			<li>
+				<a href="{% url 'principal.views.detalleReceta' dato.id %}">
+				{{dato.titulo}}</a>
+				<br>
+				<img alt="" src="{{MEDIA_URL}}{{dato.imagen}}">
+			</li>
+		{% empty %}
+			<li> A&uacute;n no hay recetas registradas.
+		{% endfor %}
+	</ul>
+{% endblock %}
