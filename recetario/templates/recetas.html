@@ -10,7 +10,8 @@
 	<h1>Nuestras recetas</h1>
 {% endblock%}
 {% block contenido %}
-	<ul>
+	<a href="receta/nueva" type="submit">Agregar nueva receta</a>
+    <ul>
 		{%for dato in datos %}
 			<li>
 				<a href="{% url 'principal.views.detalleReceta' dato.id %}">
