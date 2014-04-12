@@ -3,6 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 
+
 admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
@@ -17,5 +18,8 @@ urlpatterns = patterns('',
     url(r'^receta/(?P<idReceta>\d+)$', 'principal.views.detalleReceta'),
     url(r'^contacto/$', 'principal.views.contacto'),
     url(r'^receta/nueva/$', 'principal.views.nuevaReceta'),
-    url(r'^comenta/$', 'principal.views.n')
+    url(r'^comenta/$', 'principal.views.nuevoComentario'),
+    url(r'^usuario/$', 'principal.views.usuario'),
+    url(r'^usuario/nuevo/$', 'principal.views.usuarioNuevo'),
+    url(r'^usuario/nuevopass/$', 'principal.views.recuperarPass'),
 )

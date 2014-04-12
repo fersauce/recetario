@@ -74,6 +74,17 @@ DATABASES = {
     }
 }
 
+PASSWORD_HASHERS = (
+    #'recetario.principal.hashers.SSHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
@@ -105,3 +116,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'sigmasystem21@gmail.com'
 EMAIL_HOST_PASSWORD = 'useruser'
 EMAIL_PORT = 587
+
+STATICFILES_DIR = (
+    os.path.join(PROJECT_PATH, 'static')
+)

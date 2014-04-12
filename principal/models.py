@@ -25,6 +25,21 @@ class Comentario(models.Model):
     receta = models.ForeignKey(Receta)
     texto = models.TextField(help_text='Tu comentario',
                              verbose_name='comentario')
-    
     def __unicode__(self):
         return self.texto
+
+
+class Usuario(models.Model):
+    class Meta:
+        db_table = 'usuarios'
+
+
+    username = models.CharField(max_length=15, unique=True)
+    email = models.EmailField()
+    password = models.CharField(max_length=256)
+    nombre = models.CharField(max_length=40)
+
+
+
+class Usuario2(User):
+    direccion = models.CharField(max_length=50)
